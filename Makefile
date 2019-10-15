@@ -168,9 +168,14 @@ else ifeq ($(COIN),resistance)
 DEFINES   += COIN_P2PKH_VERSION=7063 COIN_P2SH_VERSION=7068 COIN_FAMILY=1 COIN_COINID=\"Res\" COIN_COINID_HEADER=\"RES\" COIN_COLOR_HDR=0x3790CA COIN_COLOR_DB=0x9BC8E5 COIN_COINID_NAME=\"Res\" COIN_COINID_SHORT=\"RES\" COIN_KIND=COIN_KIND_RESISTANCE
 APPNAME ="Resistance"
 APP_LOAD_PARAMS += --path $(APP_PATH)
+else ifeq ($(COIN),stash)
+# Stash
+DEFINES   += COIN_P2PKH_VERSION=76 COIN_P2SH_VERSION=16 COIN_FAMILY=1 COIN_COINID=\"Stash\" COIN_COINID_HEADER=\"STASH\" COIN_COLOR_HDR=0xF8DA1B COIN_COLOR_DB=0xFFEF8A COIN_COINID_NAME=\"Stash\" COIN_COINID_SHORT=\"STPX\" COIN_KIND=COIN_KIND_STASH
+APPNAME ="Stash"
+APP_LOAD_PARAMS += --path $(APP_PATH)
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix, lbry, resistance)
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, horizen, komodo, stratis, peercoin, pivx, viacoin, vertcoin, stealth, digibyte, qtum, bitcoin_private, zcoin, gamecredits, zclassic, xsn, nix, lbry, resistance, stash)
 endif
 endif
 
