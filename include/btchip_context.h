@@ -243,6 +243,8 @@ struct btchip_context_s {
     unsigned char totalOutputAmount[8];
     unsigned char changeOutputFound;    
 
+    /* Sprout */
+    unsigned char usingSprout;
     /* Overwinter */
     unsigned char usingOverwinter;
     unsigned char overwinterSignReady;
